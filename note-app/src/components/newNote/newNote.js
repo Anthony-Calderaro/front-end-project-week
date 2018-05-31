@@ -1,7 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 
-export default class newNote extends React.Component {
+const newNote = (props) => {
+
     state = {
         title: '',
         body: '',
@@ -25,17 +26,15 @@ export default class newNote extends React.Component {
             })
     }
 
-    render() {
-        return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    <label>
-                        Note Name:
+    return (
+        <div>
+            <form onSubmit={this.handleSubmit}>
+                <label>
+                    Note Name:
                     <input type='text' name='name' onChange={this.handleChange} />
-                    </label>
-                    <button type='submit'>Add</button>
-                </form>
-            </div>
-        )
-    }
+                </label>
+                <button type='submit'>Add</button>
+            </form>
+        </div>
+    )
 }
