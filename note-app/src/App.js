@@ -14,6 +14,7 @@ import InputForm from './components/inputForm/inputForm.js';
 import Display from './components/display/display.js';
 import Home from './components/home/home.js';
 import displayAll from './components/displayAll/displayAll';
+import newNote from './components/newNote/newNote';
 
 
 class App extends Component {
