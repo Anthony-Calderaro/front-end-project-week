@@ -5,7 +5,7 @@ import { Route } from 'react-router-dom';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import notes from './notes.js';
 import axios from 'axios';
-const url = 'https'
+
 
 // Combine Component Imports into a single file at end
 import Header from './components/header/header.js';
@@ -16,7 +16,7 @@ import Home from './components/home/home.js';
 import displayAll from './components/displayAll/displayAll';
 import NewNote from './components/NewNote/NewNote';
 
-
+// const url = 'https'
 class App extends Component {
   constructor(props) {
     super(props);
@@ -25,30 +25,30 @@ class App extends Component {
     // this.setState = this.setState.bind(this)
   }
 
-  componentDidMount() {
-    this.newRequest();
-  }
+  // componentDidMount() {
+  //   this.newRequest();
+  // }
 
-  newRequest = () => {
-    axios
-      .get(url)
-      .then(response => {
-        this.setState({ notes: response.data })
-      })
-      .catch(error => {
-        console.log(error);
-      })
-  };
+  // newRequest = () => {
+  //   axios
+  //     .get(url)
+  //     .then(response => {
+  //       this.setState({ notes: response.data })
+  //     })
+  //     .catch(error => {
+  //       console.log(error);
+  //     })
+  // };
 
-  deleteNote = (noteId) => {
-    axios.delete(`${url}/${noteId}`)
-    .then(response => {
-      this.newRequest();
-    })
-    .catch(err => {
-      console.log(err);
-    });
-  };
+  // deleteNote = (noteId) => {
+  //   axios.delete(`${url}/${noteId}`)
+  //   .then(response => {
+  //     this.newRequest();
+  //   })
+  //   .catch(err => {
+  //     console.log(err);
+  //   });
+  // };
 
   render() {
     return (
