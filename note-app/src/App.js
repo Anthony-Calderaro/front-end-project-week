@@ -53,6 +53,11 @@ class App extends Component {
     return (
       <div className="App">
       <p> poop</p>
+      <p> poop</p>
+      <p> poop</p>
+      <p> poop</p>
+      <p> poop</p>
+      <p> poop</p>
         <Route
           exact path='/' title='List View' component={Header} />
         <Route exact path='/' render={props => <Home notes={this.state.notes} />} />
