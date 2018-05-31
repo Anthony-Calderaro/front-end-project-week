@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-const newNote = (props) => {
+const NewNote = (props) => {
 
     state = {
         title: '',
@@ -38,3 +38,4 @@ const newNote = (props) => {
         </div>
     )
 }
+export default NewNote;

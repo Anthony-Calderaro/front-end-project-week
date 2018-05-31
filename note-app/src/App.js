@@ -14,7 +14,7 @@ import InputForm from './components/inputForm/inputForm.js';
 import Display from './components/display/display.js';
 import Home from './components/home/home.js';
 import displayAll from './components/displayAll/displayAll';
-import newNote from './components/newNote/newNote';
+import NewNote from './components/NewNote/NewNote';
 
 
 class App extends Component {
@@ -53,14 +53,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+      <NewNote />
       <p> poop</p>
       <p> poop</p>
-      <p> poop</p>
-      <p> poop</p>
-      <p> poop</p>
-      <p> poop</p>
+ 
         <Route
           exact path='/' title='List View' component={Header} />
+               <p> poop</p>
+      <p> poop</p>
+      <p> poop</p>
         <Route exact path='/' render={props => <Home notes={this.state.notes} />} />
 
 
