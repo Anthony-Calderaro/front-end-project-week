@@ -5,6 +5,7 @@ import { Route } from 'react-router-dom';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import notes from './notes.js';
 import axios from 'axios';
+const url = 'https'
 
 // Combine Component Imports into a single file at end
 import Header from './components/header/header.js';
@@ -12,58 +13,46 @@ import NavBar from './components/navBar/navBar.js';
 import InputForm from './components/inputForm/inputForm.js';
 import Display from './components/display/display.js';
 import Home from './components/home/home.js';
+import displayAll from './components/displayAll/displayAll';
 
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = { notes };
+
+    // this.setState = this.setState.bind(this)
   }
 
   componentDidMount() {
+    this.newRequest();
+  }
+
+  newRequest = () => {
     axios
-      .get('https://blooming-bastion-41361.herokuapp.com/api/notes')
+      .get(url)
       .then(response => {
         this.setState({ notes: response.data })
       })
-      .catch(err => {
-        console.log(err)
-      });
+      .catch(error => {
+        console.log(error);
+      })
   };
 
-  handleUpdate = (id, update) => {
-    axios
-      .put(`https://blooming-bastion-41361.herokuapp.com/api/notes/${id}`, update)
-      .then(response => {
-        let { notes } = this.state;
-        notes.map(((note) => {
-          if (note._id === response.data._id) {
-            note.title = response.data.title;
-            note.content = response.data.content;
-            return note
-          }
-          return note
-        });
-      this.setState({ notes: notes });
-      })
-      .catch(err => {
-        console.log(err);
-      })
-  }
   deleteNote = (noteId) => {
     axios.delete(`${url}/${noteId}`)
-      .then(response => {
-        this.newRequest();
-      })
-      .catch(err => {
-        console.log(err);
-      });
+    .then(response => {
+      this.newRequest();
+    })
+    .catch(err => {
+      console.log(err);
+    });
   };
 
   render() {
     return (
       <div className="App">
-
+      <p> poop</p>
         <Route
           exact path='/' title='List View' component={Header} />
         <Route exact path='/' render={props => <Home notes={this.state.notes} />} />
