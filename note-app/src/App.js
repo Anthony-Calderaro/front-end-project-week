@@ -54,8 +54,6 @@ class App extends Component {
     return (
       <div className="App">
       <NewNote />
-      <p> poop</p>
-      <p> poop</p>
  
         <Route
           exact path='/' title='List View' component={Header} />
