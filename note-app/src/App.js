@@ -59,9 +59,7 @@ class App extends Component {
  
         <Route
           exact path='/' title='List View' component={Header} />
-               <p> poop</p>
-      <p> poop</p>
-      <p> poop</p>
+  
         <Route exact path='/' render={props => <Home notes={this.state.notes} />} />
 
 
